@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+    <color name="actionbar_title_color">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#5C869E</color>
+    <color name="green">#7700ff00</color>
+    <color name="yellow">#ff7000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="dark_black">#333333</color>
+    <color name="screen_background_white">#00ffffff</color>
+    <color name="translucent_background">#00000000</color>
+    <color name="white_background">#00ffffff</color>
+    <color name="gray_background">#F7F7F7</color>
+    <color name="deep_black">#323232</color>
+    <color name="solid_red">#f00</color>
+    <color name="solid_while">#888888</color>
+    <color name="solid_saffron">#ff6414</color>
+    <color name="solid_blue">#0000ff</color>
+    <color name="solid_green">#f0f0</color>
+    <color name="solid_yellow">#ffffff00</color>
+    <color name="saffron">#ffa649</color>
+    <color name="titlebackgroundcolor">#FFFE8625</color>
+    <color name="listitem_divide">#ffd4d3d3</color>
+    <color name="gray">#666664</color>
+    <color name="btn_focused_color_yellow">#FDFDFD</color>
+    <color name="btn_pressed_color_light">#FDFDFD</color>
+    <color name="btn_default_color_light">#FF5F11</color>
+    <color name="rounded_container_border">#ffb7babb</color>
+    <color name="base_start_color_default">#FFFFFF</color>
+    <color name="base_end_color_default">#FFFFFF</color>
+    <color name="base_start_color_pressed">#FFff7a13</color>
+    <color name="base_center_color_pressed">#FFff8c2f</color>
+    <color name="base_end_color_pressed">#FFffa254</color>
+    <color name="text_color_default">#000000</color>
+    <color name="text_color_pressed">#ffffff</color>
+    <color name="yellow_1">#FFFF6501</color>
+    <color name="yellow_2">#FFFF9248</color>
+
+    <!-- 视觉规范 字体颜色 -->
+    <color name="more_gray">#FFBFB9B0</color>
+    <color name="light_gray">#FF999999</color>
+    <color name="middle_gray">#FF969696</color>
+    <color name="deep_gray">#FF333333</color>
+    <color name="orange_red">#FFFF8000</color>
+    <color name="dark_gray">#FFABA9A5</color>
+    <color name="deep_orange_red">#FFE84200</color>
+    <color name="font_gray">#FF878787</color>
+    <color name="background_gray">#FFDCDCDC</color>
+    <color name="light_red">#FFFF6633</color>
+    <!-- 通用页面背景色 -->
+    <color name="common_bk_color">#FFF0F0F0</color>
+</resources>

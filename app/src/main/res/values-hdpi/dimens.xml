@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 视觉规范 字号 -->
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_medium_1">14sp</dimen>
+    <dimen name="text_medium_2">15sp</dimen>
+    <dimen name="text_medium_3">13sp</dimen>
+    <dimen name="text_medium">12sp</dimen>
+    <dimen name="text_small">11sp</dimen>
+    <dimen name="text_very_small">10sp</dimen>
+
+    <!-- 视觉规范 字号 -->
+    <dimen name="text_size_9">7sp</dimen>
+    <dimen name="text_size_10">8sp</dimen>
+    <dimen name="text_size_11">9sp</dimen>
+    <dimen name="text_size_12">10sp</dimen>
+    <dimen name="text_size_13">11sp</dimen>
+    <dimen name="text_size_14">12sp</dimen>
+    <dimen name="text_size_15">13sp</dimen>
+    <dimen name="text_size_16">14sp</dimen>
+    <dimen name="text_size_17">15sp</dimen>
+    <dimen name="text_size_18">16sp</dimen>
+    <dimen name="text_size_19">17sp</dimen>
+    <dimen name="text_size_20">18sp</dimen>
+    <dimen name="text_size_21">19sp</dimen>
+    <dimen name="text_size_22">20sp</dimen>
+    <dimen name="text_size_23">21sp</dimen>
+    <dimen name="text_size_24">22sp</dimen>
+    <dimen name="text_size_25">23sp</dimen>
+    <dimen name="text_size_27">25sp</dimen>
+    <dimen name="text_size_28">26sp</dimen>
+    <dimen name="text_size_30">28sp</dimen>
+    <dimen name="text_size_32">30sp</dimen>
+    <dimen name="text_size_34">32sp</dimen>
+    <dimen name="text_size_35">33sp</dimen>
+    <dimen name="text_size_36">34sp</dimen>
+    <dimen name="text_size_39">37sp</dimen>
+    <dimen name="text_size_40">38sp</dimen>
+    <dimen name="text_size_42">40sp</dimen>
+    <dimen name="text_size_43">41sp</dimen>
+    <dimen name="text_size_44">42sp</dimen>
+    <dimen name="text_size_50">48sp</dimen>
+    <dimen name="text_size_78">76sp</dimen>
+
+    <!--团购 字号 小屏幕上 缩小1sp-->
+    <dimen name="tuan_text_size_12">11sp</dimen>
+</resources>

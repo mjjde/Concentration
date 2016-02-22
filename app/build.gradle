@@ -9,6 +9,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -30,4 +31,5 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.github.Aspsine:SwipeToLoadLayout:v1.0.2'
+    compile 'com.android.support:multidex:1.0.0'
 }

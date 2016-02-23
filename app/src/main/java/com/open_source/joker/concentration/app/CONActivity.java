@@ -9,11 +9,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -67,7 +65,7 @@ public class CONActivity extends AppCompatActivity {
         return c.getSharedPreferences(c.getPackageName(), MODE_PRIVATE);
     }
 
-    public void initMannager(){
+    public void initMannager() {
         mFragmentManager = getSupportFragmentManager();
     }
 
@@ -190,11 +188,12 @@ public class CONActivity extends AppCompatActivity {
         return fragment;
     }
 
+
     @Override
-    public void startActivityForResult(Intent intent, int requestCode, Bundle options) {
+    public void startActivityForResult(Intent intent, int requestCode) {
         String url = intent.getDataString();
         CrashReportHelper.putUrlSchema(url);
-        super.startActivityForResult(intent, requestCode, options);
+        super.startActivityForResult(intent, requestCode);
     }
 
     public void startActivity(String urlSchema) {

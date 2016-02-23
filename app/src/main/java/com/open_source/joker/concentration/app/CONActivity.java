@@ -13,6 +13,7 @@ import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -54,6 +55,7 @@ public class CONActivity extends AppCompatActivity {
     protected int managedDialogId = 0;
 
     protected boolean isDestroyed;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +130,7 @@ public class CONActivity extends AppCompatActivity {
     protected void onLeftTitleButtonClicked() {
         onBackPressed();
     }
+
 
     public void switchFragment(Fragment toFragment, int id) {
         switchFragment(toFragment, id, null);
@@ -346,6 +349,7 @@ public class CONActivity extends AppCompatActivity {
 
     public char getCharParam(String name) {
         return getCharParam(name, (char) 0);
+
     }
 
     public char getCharParam(String name, char defaultValue) {

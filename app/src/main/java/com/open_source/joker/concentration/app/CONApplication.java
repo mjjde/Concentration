@@ -1,6 +1,12 @@
 package com.open_source.joker.concentration.app;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
+import android.widget.Toast;
+
+import com.open_source.joker.concentration.constant.ConfigHelper;
+import com.open_source.joker.concentration.util.CrashReportHelper;
+import com.open_source.joker.concentration.util.Environment;
+import com.open_source.joker.concentration.util.log.Log;
 
 /**
  * 文件名：com.open_source.joker.concentration.app
@@ -26,5 +32,33 @@ public class CONApplication extends MultiDexApplication {
         }
 
         return instance;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if ((getApplicationInfo().flags & 0x2) != 0) {
+            Log.LEVEL = Log.VERBOSE;
+        } else {
+            Log.LEVEL = Integer.MAX_VALUE;
+        }
+
+        checkCrashReport();
+    }
+
+    private void checkCrashReport() {
+        CrashReportHelper.init(this);
+        if (!ConfigHelper.disableSafeLooper) {
+            CrashReportHelper.installSafeLooper();
+        }
+        boolean crashed = CrashReportHelper.isAvailable();
+        if (crashed) {
+            CrashReportHelper.sendAndDelete();
+        }
+        if (CrashReportHelper.lastOutOfMemoryMills + 10000 > System.currentTimeMillis()) {
+            if (Environment.isDebug())
+                Toast.makeText(this, "内存不足", Toast.LENGTH_LONG).show();
+        }
+        CrashReportHelper.lastOutOfMemoryMills = 0;
     }
 }

@@ -11,7 +11,8 @@ import com.aspsine.swipetoloadlayout.SwipeTrigger;
 import com.open_source.joker.concentration.R;
 
 /**
- * Created by liu on 2016/2/17.
+ * Created by jing on 2016/2/22.
+ * 上拉刷新的头部
  */
 public class RefreshHeaderView extends FrameLayout implements SwipeTrigger,SwipeRefreshTrigger {
     private GoogleCircleProgressView progressView;

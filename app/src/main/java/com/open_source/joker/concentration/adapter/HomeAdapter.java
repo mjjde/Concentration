@@ -12,7 +12,7 @@ import com.open_source.joker.concentration.R;
 import java.util.ArrayList;
 
 /**
- * Created by liu on 2016/2/22.
+ * Created by jing on 2016/2/23.
  */
 public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
@@ -37,7 +37,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return list.size() != 0 && !list.isEmpty() ? list.size() : 0;
+        return list.size();
     }
 
     class HomeHolder extends RecyclerView.ViewHolder{

@@ -5,7 +5,6 @@ import android.os.PersistableBundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -23,17 +22,21 @@ import com.open_source.joker.concentration.util.ToolBarHelper;
  * 作者: joker
  */
 public class CONActivity extends AppCompatActivity {
-    private FragmentManager mFragmentManager;
-    private int mCurrentFragment = -1;
 
     private ToolBarHelper mToolBarHelper;
     private Toolbar toolbar;
     private Toast toast;
 
+    private FragmentManager mFragmentManager;
+    private int mCurrentFragment = -1;
+
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
+    }
 
+    public void initMannager(){
+        mFragmentManager = getSupportFragmentManager();
     }
 
     @Override
@@ -66,7 +69,7 @@ public class CONActivity extends AppCompatActivity {
 
     public void hideToolbar() {
         if (toolbar != null)
-        toolbar.setVisibility(View.GONE);
+            toolbar.setVisibility(View.GONE);
     }
 
     @Override
@@ -96,18 +99,14 @@ public class CONActivity extends AppCompatActivity {
         onBackPressed();
     }
 
-    public void initManager(){
-        mFragmentManager = getSupportFragmentManager();
-    }
-
-    public void switchFragment(Fragment toFragment, int id){
+    public void switchFragment(Fragment toFragment, int id) {
         switchFragment(toFragment, id, null);
     }
 
     /**
      * 切换fragment
      *
-     * @param toFragment 显示的Fragment
+     * @param toFragment
      * @param id
      * @param bundle
      */
@@ -116,6 +115,7 @@ public class CONActivity extends AppCompatActivity {
             if (bundle != null && !bundle.isEmpty()) {
                 getCurrFragment().getArguments().putAll(bundle);
             }
+
             return;
         }
         Fragment fromFragment = mFragmentManager.findFragmentByTag(String

@@ -11,7 +11,8 @@ import com.aspsine.swipetoloadlayout.SwipeTrigger;
 import com.open_source.joker.concentration.R;
 
 /**
- * Created by liu on 2016/2/22.
+ * Created by jing on 2016/2/22.
+ * 加载更多的底部View
  */
 public class LoadMoreFooterView extends FrameLayout implements SwipeTrigger,SwipeLoadMoreTrigger {
     ImageView ivLoadMore;

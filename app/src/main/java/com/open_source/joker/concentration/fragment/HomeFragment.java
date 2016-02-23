@@ -19,13 +19,13 @@ import com.open_source.joker.concentration.app.CONFragment;
 import java.util.ArrayList;
 
 /**
- * Created by jing on 2016/2/22.
+ * Created by jing on 2016/2/23.
  */
-public class HomeFragment extends CONFragment implements OnRefreshListener, OnLoadMoreListener {
+public class HomeFragment extends CONFragment implements OnRefreshListener, OnLoadMoreListener{
     private SwipeToLoadLayout mSwipeToLoadLayout;
     private RecyclerView mRecyclerView;
     private HomeAdapter mHomeAdapter;
-    private ArrayList<String> list;
+    private ArrayList<String> mList;
 
     @Nullable
     @Override
@@ -36,7 +36,7 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mSwipeToLoadLayout = (SwipeToLoadLayout) view.findViewById(R.id.swipe_layout);
+        mSwipeToLoadLayout = (SwipeToLoadLayout) view.findViewById(R.id.swipeToLoadLayout);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.swipe_target);
     }
 
@@ -44,48 +44,48 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list = new ArrayList<>();
-        mHomeAdapter = new HomeAdapter(getActivity(), list);
+        mList = new ArrayList<>();
+        mHomeAdapter = new HomeAdapter(getActivity(), mList);
         mRecyclerView.setAdapter(mHomeAdapter);
 
+        mSwipeToLoadLayout.setOnRefreshListener(this);
+        mSwipeToLoadLayout.setOnLoadMoreListener(this);
         mSwipeToLoadLayout.post(new Runnable() {
             @Override
             public void run() {
                 mSwipeToLoadLayout.setRefreshing(true);
             }
         });
-        mSwipeToLoadLayout.setOnRefreshListener(this);
-        mSwipeToLoadLayout.setOnLoadMoreListener(this);
+    }
 
+    @Override
+    public void onRefresh() {
+        if (mHomeAdapter.getItemCount() != 0) mList.clear();
+        for (int i = 0; i < 20; i++) {
+            mList.add("Refresh" + i);
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mHomeAdapter.notifyDataSetChanged();
+                mSwipeToLoadLayout.setRefreshing(false);
+            }
+        }, 3000);
     }
 
     @Override
     public void onLoadMore() {
         for (int i = 0; i < 10; i++) {
-            list.add("LoadMore" + i);
+            mList.add("LoadMore" + i);
         }
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                mHomeAdapter.notifyDataSetChanged();
                 mSwipeToLoadLayout.setLoadingMore(false);
-                mHomeAdapter.notifyDataSetChanged();
             }
-        }, 5000);
-
+        }, 3000);
     }
 
-    @Override
-    public void onRefresh() {
-        if (mHomeAdapter.getItemCount() != 0) list.clear();
-        for (int i = 0; i < 20; i++) {
-            list.add("Refresh" + i);
-        }
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mSwipeToLoadLayout.setRefreshing(false);
-                mHomeAdapter.notifyDataSetChanged();
-            }
-        }, 5000);
-    }
+
 }

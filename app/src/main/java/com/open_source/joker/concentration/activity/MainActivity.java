@@ -8,46 +8,35 @@ import android.view.MenuItem;
 
 import com.open_source.joker.concentration.R;
 import com.open_source.joker.concentration.app.CONActivity;
+import com.open_source.joker.concentration.fragment.HelpFragment;
 import com.open_source.joker.concentration.fragment.HomeFragment;
-import com.open_source.joker.concentration.fragment.OtherFragment;
 
-public class MainActivity extends CONActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private static final int HOME = 1;
-    private static final int OTHER = 10;
+public class MainActivity extends CONActivity implements NavigationView.OnNavigationItemSelectedListener{
+    public static final int HOME = 1;
+    public static final int HELP = 10;
+
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavView;
+
     private HomeFragment mHomeFragment;
-    private OtherFragment mOtherFragment;
+    private HelpFragment mHelpFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("首页");
-        initManager();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavView = (NavigationView) findViewById(R.id.nav_view);
+        setTitle("首页");
+        initMannager();
+        initFragmet();
         mNavView.setNavigationItemSelectedListener(this);
-
-        mHomeFragment = new HomeFragment();
-        mOtherFragment = new OtherFragment();
-
-        switchFragment(mHomeFragment, HOME);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        mDrawerLayout.closeDrawer(GravityCompat.START);
-        switch (item.getItemId()) {
-            case R.id.home:
-                switchFragment(mHomeFragment, HOME);
-                break;
-            case R.id.other:
-                switchFragment(mOtherFragment, OTHER);
-                break;
-        }
-        item.setChecked(true);
-        return false;
+    private void initFragmet() {
+        mHomeFragment = new HomeFragment();
+        mHelpFragment = new HelpFragment();
+        switchFragment(mHomeFragment, HOME);
     }
 
     @Override
@@ -59,5 +48,20 @@ public class MainActivity extends CONActivity implements NavigationView.OnNaviga
         }
     }
 
-
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+        switch (item.getItemId()) {
+            case R.id.home:
+                switchFragment(mHomeFragment, HOME);
+                setTitle("首页");
+                break;
+            case R.id.help:
+                switchFragment(mHelpFragment, HELP);
+                setTitle("帮助");
+                break;
+        }
+        item.setChecked(true);
+        return false;
+    }
 }

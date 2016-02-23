@@ -27,7 +27,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 
 /**
- * Created by liu on 2016/2/17.
+ * Created by jing on 2016/2/22.
  */
 public class MaterialProgressDrawable extends Drawable implements Animatable {
     // Maps to ProgressBar.Large style

@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import com.open_source.joker.concentration.R;
 
 /**
- * Created by liu on 2016/2/22.
+ * Created by jing on 2016/2/22.
  */
 public class GoogleCircleProgressView extends ImageView {
 

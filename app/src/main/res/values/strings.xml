@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Concentration</string>
     <string name="splash">闪屏</string>
+
+    <string name="nickname">呢称</string>
 </resources>

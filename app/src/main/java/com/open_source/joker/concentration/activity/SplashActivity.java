@@ -1,6 +1,8 @@
 package com.open_source.joker.concentration.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.open_source.joker.concentration.R;
 import com.open_source.joker.concentration.app.CONActivity;
@@ -17,5 +19,13 @@ public class SplashActivity extends CONActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
         hideToolbar();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                finish();
+            }
+        }, 2000);
     }
 }

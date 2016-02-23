@@ -14,12 +14,8 @@ import java.lang.reflect.Method;
 /**
  * 文件名：com.open_source.joker.concentration.util
  * 描述：调用SafeLooper.install()，主消息循环会被接管，所有的消息会运行在一个嵌套的子消息循环中<br>
-<<<<<<< b4e373221bc89b9d4bb327ae357996f31b98edb3
  * 一旦崩溃，getUncaughtExceptionHandler()将会接收到崩溃的消息，但是主消息循环会继续执行。<br>
  * 由于同步机制，post一个无限循环的Runnable,主线程的MessageQueue.next(),不会被调用，才有机会被接管。
-=======
- * 一旦崩溃，getUncaughtExceptionHandler()将会接收到崩溃的消息，但是主消息循环会继续执行。
->>>>>>> add log and crashReport
  * 时间：16/2/22
  * 作者: joker
  */

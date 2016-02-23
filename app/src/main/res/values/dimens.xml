@@ -5,4 +5,8 @@
 
     <dimen name="titlebar_height">50dip</dimen>
     <dimen name="title_bar_button_size">40dp</dimen>
+
+    <dimen name="refresh_trigger_offset_google">100dp</dimen>
+    <dimen name="refresh_final_offset_google">150dp</dimen>
+    <dimen name="load_more_trigger_offset_google">88dp</dimen>
 </resources>

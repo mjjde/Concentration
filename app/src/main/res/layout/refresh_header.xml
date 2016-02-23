@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.open_source.joker.concentration.widget.refresh.RefreshHeaderView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+    
+    <com.open_source.joker.concentration.widget.refresh.GoogleCircleProgressView
+        android:id="@+id/googleProgress"
+        app:gcp_show_arrow="true"
+        app:gcp_progress_stoke_width="3dp"
+        app:gcp_arrow_height="6dp"
+        app:gcp_arrow_width="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"  />
+
+</com.open_source.joker.concentration.widget.refresh.RefreshHeaderView>

@@ -8,7 +8,7 @@
         android:id="@+id/id_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/white"
+        android:background="?attr/colorPrimary"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"></android.support.v7.widget.Toolbar>
 </FrameLayout>

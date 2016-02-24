@@ -19,7 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="com.open_source.joker.concentration.activity.MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:host="main" android:scheme="concentration" />
+
+            </intent-filter>
+        </activity>
 
     </application>
 

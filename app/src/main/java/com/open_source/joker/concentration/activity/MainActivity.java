@@ -29,11 +29,11 @@ public class MainActivity extends CONActivity implements NavigationView.OnNaviga
         mNavView = (NavigationView) findViewById(R.id.nav_view);
         setTitle("首页");
         initMannager();
-        initFragmet();
+        initFragment();
         mNavView.setNavigationItemSelectedListener(this);
     }
 
-    private void initFragmet() {
+    private void initFragment() {
         mHomeFragment = new HomeFragment();
         mHelpFragment = new HelpFragment();
         switchFragment(mHomeFragment, HOME);

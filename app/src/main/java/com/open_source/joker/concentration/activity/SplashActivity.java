@@ -23,7 +23,7 @@ public class SplashActivity extends CONActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent("com.open_source.joker.concentration.activity.MainActivity"));
+                startActivity("concentration://main");
                 finish();
             }
         }, 2000);

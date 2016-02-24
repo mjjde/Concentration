@@ -58,8 +58,31 @@ public class CONActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CONApplication.instance().activityOnCreate(this);
         prefs = preferences(this);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CONApplication.instance().activityOnResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        CONApplication.instance().activityOnPause(this);
+
+        super.onPause();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        CONApplication.instance().activityOnDestory(this);
+        isDestroyed = true;
+    }
+
 
     public static SharedPreferences preferences(Context c) {
         return c.getSharedPreferences(c.getPackageName(), MODE_PRIVATE);
@@ -365,11 +388,7 @@ public class CONActivity extends AppCompatActivity {
         return i.getCharExtra(name, defaultValue);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        isDestroyed = true;
-    }
+
 
     public void showProgressDialog(String title) {
         if (isDestroyed) {

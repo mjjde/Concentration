@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.open_source.joker.concentration">
 
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:name=".app.CONApplication"
         android:allowBackup="true"
@@ -21,6 +24,23 @@
         </activity>
         <activity android:name=".activity.MainActivity"></activity>
 
+
+        <activity
+            android:name=".activity.DebugActivity"
+            android:label="调试面板"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="debug"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".service.DebugWindowService" />
     </application>
 
 </manifest>

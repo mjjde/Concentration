@@ -116,6 +116,12 @@ public class ToolBarHelper {
         leftView.setOnClickListener(l);
     }
 
+    public void hideLeftView(){
+        if (leftView == null)
+            return;
+        leftView.setVisibility(View.INVISIBLE);
+    }
+
     public void onFinishInflate() {
         tvTitle = (TextView) mToolBar.findViewById(R.id.title_bar_title);
         tvSubTitle = (TextView) mToolBar.findViewById(R.id.title_bar_subtitle);

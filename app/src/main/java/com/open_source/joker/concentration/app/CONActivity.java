@@ -148,6 +148,11 @@ public class CONActivity extends AppCompatActivity {
             mToolBarHelper.setLeftClick(l);
     }
 
+    public  void hideLeftView(){
+        if (toolbar != null)
+            mToolBarHelper.hideLeftView();
+    }
+
     protected void onLeftTitleButtonClicked() {
         onBackPressed();
     }

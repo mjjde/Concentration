@@ -25,9 +25,9 @@ public class MainActivity extends CONActivity implements NavigationView.OnNaviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        hideLeftView();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavView = (NavigationView) findViewById(R.id.nav_view);
-        setTitle("首页");
         initMannager();
         initFragment();
         mNavView.setNavigationItemSelectedListener(this);

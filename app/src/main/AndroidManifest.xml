@@ -22,15 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="com.open_source.joker.concentration.activity.MainActivity" />
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:host="main" android:scheme="concentration" />
+                <data
+                    android:host="main"
+                    android:scheme="concentration" />
 
             </intent-filter>
         </activity>
-
 
         <activity
             android:name=".activity.DebugActivity"
@@ -38,9 +41,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data
                     android:host="debug"
                     android:scheme="concentration"></data>

@@ -17,6 +17,7 @@ import com.open_source.joker.concentration.adapter.HomeAdapter;
 import com.open_source.joker.concentration.app.CONFragment;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by jing on 2016/2/23.
@@ -45,6 +46,7 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
         super.onActivityCreated(savedInstanceState);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mList = new ArrayList<>();
+        mList.addAll(Arrays.asList(modlerList));
         mHomeAdapter = new HomeAdapter(getActivity(), mList);
         mRecyclerView.setAdapter(mHomeAdapter);
 
@@ -60,14 +62,9 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
 
     @Override
     public void onRefresh() {
-        if (mHomeAdapter.getItemCount() != 0) mList.clear();
-        for (int i = 0; i < 20; i++) {
-            mList.add("Refresh" + i);
-        }
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mHomeAdapter.notifyDataSetChanged();
                 mSwipeToLoadLayout.setRefreshing(false);
             }
         }, 3000);
@@ -75,17 +72,16 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
 
     @Override
     public void onLoadMore() {
-        for (int i = 0; i < 10; i++) {
-            mList.add("LoadMore" + i);
-        }
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                mHomeAdapter.notifyDataSetChanged();
                 mSwipeToLoadLayout.setLoadingMore(false);
             }
         }, 3000);
     }
+
+
+    private String [] modlerList ={"二维码","定位实践"};
 
 
 }

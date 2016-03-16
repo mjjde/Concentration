@@ -1,4 +1,4 @@
-package com.open_source.joker.concentration.modle;
+package com.open_source.joker.concentration.model;
 
 /**
  * 文件名：com.open_source.joker.concentration.modle

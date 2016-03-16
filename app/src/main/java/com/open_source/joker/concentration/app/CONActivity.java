@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.open_source.joker.concentration.R;
 import com.open_source.joker.concentration.constant.ToolBarStyle;
-import com.open_source.joker.concentration.modle.SimpleMsg;
+import com.open_source.joker.concentration.model.SimpleMsg;
 import com.open_source.joker.concentration.util.CrashReportHelper;
 import com.open_source.joker.concentration.util.ToolBarHelper;
 import com.open_source.joker.concentration.widget.BeautifulProgressDialog;

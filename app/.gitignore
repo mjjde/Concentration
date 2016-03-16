@@ -1,2 +1,25 @@
 /build
 .idea/misc.xml
+
+# Android Studio
+.idea/
+.gradle
+/*/local.properties
+/*/out
+build
+/*/*/production
+*.iml
+*.iws
+*.ipr
+*~
+*.swp
+*.pyc
+
+.DS_Store
+.settings/
+channel_build/
+check_img.sh
+check_string.sh
+lint.xml
+proguard/
+build.xml

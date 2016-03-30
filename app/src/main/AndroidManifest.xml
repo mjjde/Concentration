@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".app.CONApplication"
@@ -46,6 +47,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <data
                     android:host="debug"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.LocationActivity"
+            android:label="定位"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="location"
                     android:scheme="concentration"></data>
             </intent-filter>
         </activity>

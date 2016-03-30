@@ -14,9 +14,10 @@ import java.util.ArrayList;
 /**
  * Created by jing on 2016/2/23.
  */
-public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener{
     private Context context;
     private ArrayList<String> list;
+    private OnRecyclerViewItemClickListener mOnItemClickListener = null;
 
     public HomeAdapter(Context context, ArrayList<String> list) {
         this.context = context;
@@ -26,6 +27,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.home_item, parent, false);
+        view.setOnClickListener(this);
         return new HomeHolder(view);
     }
 
@@ -33,11 +35,18 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         HomeHolder homeHolder = (HomeHolder) holder;
         homeHolder.tv.setText(list.get(position));
+        homeHolder.itemView.setTag(list.get(position));
     }
 
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(mOnItemClickListener!=null)
+            mOnItemClickListener.onItemClick(v,(String)v.getTag());
     }
 
     class HomeHolder extends RecyclerView.ViewHolder{
@@ -47,5 +56,13 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv);
         }
+    }
+
+    public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
+
+    public interface  OnRecyclerViewItemClickListener{
+        void onItemClick(View view , String data);
     }
 }

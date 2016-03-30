@@ -15,6 +15,7 @@ import com.aspsine.swipetoloadlayout.SwipeToLoadLayout;
 import com.open_source.joker.concentration.R;
 import com.open_source.joker.concentration.adapter.HomeAdapter;
 import com.open_source.joker.concentration.app.CONFragment;
+import com.open_source.joker.concentration.widget.recyclerViewdivider.RecycleViewDivider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +23,7 @@ import java.util.Arrays;
 /**
  * Created by jing on 2016/2/23.
  */
-public class HomeFragment extends CONFragment implements OnRefreshListener, OnLoadMoreListener{
+public class HomeFragment extends CONFragment implements OnRefreshListener, OnLoadMoreListener, HomeAdapter.OnRecyclerViewItemClickListener {
     private SwipeToLoadLayout mSwipeToLoadLayout;
     private RecyclerView mRecyclerView;
     private HomeAdapter mHomeAdapter;
@@ -48,6 +49,8 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
         mList = new ArrayList<>();
         mList.addAll(Arrays.asList(modlerList));
         mHomeAdapter = new HomeAdapter(getActivity(), mList);
+        mHomeAdapter.setOnItemClickListener(this);
+        mRecyclerView.addItemDecoration(new RecycleViewDivider(getActivity(), LinearLayoutManager.VERTICAL));
         mRecyclerView.setAdapter(mHomeAdapter);
 
         mSwipeToLoadLayout.setOnRefreshListener(this);
@@ -81,7 +84,13 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
     }
 
 
-    private String [] modlerList ={"二维码","定位实践"};
+    private String[] modlerList = {"二维码", "定位实践"};
 
 
+    @Override
+    public void onItemClick(View view, String data) {
+        if (data.equals(modlerList[1])) {
+            startActivity("concentration://location");
+        }
+    }
 }

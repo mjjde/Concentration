@@ -16,11 +16,11 @@ import java.util.List;
  * 时间：16/2/29
  * 作者: joker
  */
-public class WifiScanner extends BaseSacnner<WifiModel> {
+public class WIFIScanner extends BaseSacnner<WifiModel> {
 
     private final WifiManager mWifiManager;
 
-    public WifiScanner(Context context) {
+    public WIFIScanner(Context context) {
         super(context);
         mWifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
     }

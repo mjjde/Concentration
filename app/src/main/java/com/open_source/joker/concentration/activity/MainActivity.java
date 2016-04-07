@@ -60,6 +60,9 @@ public class MainActivity extends CONActivity implements NavigationView.OnNaviga
                 switchFragment(mHelpFragment, HELP);
                 setTitle("帮助");
                 break;
+            case R.id.debug:
+                startActivity("concentration://debug");
+                break;
         }
         item.setChecked(true);
         return false;

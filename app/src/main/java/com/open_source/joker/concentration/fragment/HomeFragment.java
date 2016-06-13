@@ -84,13 +84,17 @@ public class HomeFragment extends CONFragment implements OnRefreshListener, OnLo
     }
 
 
-    private String[] modlerList = {"二维码", "定位实践"};
+    private String[] modlerList = {"二维码", "定位", "项目标配动画库ViewAnimator","动画"};
 
 
     @Override
     public void onItemClick(View view, String data) {
         if (data.equals(modlerList[1])) {
             startActivity("concentration://location");
+        } else if (data.equals(modlerList[2])) {
+            startActivity("concentration://viewanimator");
+        }else if(data.equals(modlerList[3])){
+            startActivity("concentration://animator");
         }
     }
 }

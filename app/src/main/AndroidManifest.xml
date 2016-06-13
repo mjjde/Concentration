@@ -64,6 +64,78 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.ViewAnimatorSimpleActivity"
+            android:label="ViewAnimator"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="viewanimator"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.AnimationAct"
+            android:label="Animator"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="animator"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.ViewAct"
+            android:label="Animator"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="viewAct"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.FrameAnimaAct"
+            android:label="Animator"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="frameact"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.PropertyAct"
+            android:label="Animator"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="propertyact"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.TestAnimationAct"
+            android:label="Animator"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="testanimation"
+                    android:scheme="concentration"></data>
+            </intent-filter>
+        </activity>
+
         <service android:name=".service.DebugWindowService" />
     </application>
 
